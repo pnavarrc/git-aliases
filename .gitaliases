@@ -9,3 +9,5 @@ standup = !git log \
 skipci = "!f() { \
             git commit -am \"[skip ci] $1\"; \
           }; f"
+
+current-branch = !git name-rev --name-only HEAD

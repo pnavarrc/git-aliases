@@ -25,6 +25,12 @@ Show the commit messages between 12pm yesterday and 12pm today. Adapted from htt
 
 Change the commit message to skip the Travis build. It’s equivalent to call `git commit -am '[skip ci] commit message'`.
 
+#### Current Branch
+
+`git current-branch`
+
+Shows the name of the current branch.
+
 ## Learn More
 
 [Git Aliases (docs)](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
