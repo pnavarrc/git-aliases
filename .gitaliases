@@ -1,9 +1,9 @@
 [alias]
-standup = !git log            \
-          --author=$USER      \
+standup = !git log \
+          --author=$USER \
           --since='yesterday' \
-          --before='today'    \
-          --all               \
+          --before='today' \
+          --all \
           --format='%cr - %s'
 
 skipci = "!f() { \
