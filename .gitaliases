@@ -1,0 +1,11 @@
+[alias]
+standup = !git log \
+          --author=$USER \
+          --since='yesterday' \
+          --before='today' \
+          --all \
+          --format='%cr - %s'
+
+skipci = "!f() { \
+            git commit -am \"[skip ci] $1\"; \
+          }; f"
