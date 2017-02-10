@@ -7,7 +7,11 @@ standup = !git log \
           --format='%cr - %s'
 
 skipci = "!f() { \
-            git commit -am \"[skip ci] $1\"; \
-          }; f"
+  git commit -am \"[skip ci] $1\"; \
+}; f"
 
 current-branch = !git name-rev --name-only HEAD
+
+push-current-branch = "!f() { \
+  git push -u origin $(git current-branch); \
+}; f"
