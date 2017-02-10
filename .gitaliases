@@ -15,3 +15,8 @@ current-branch = !git name-rev --name-only HEAD
 push-current-branch = "!f() { \
   git push -u origin $(git current-branch); \
 }; f"
+
+# Meta-Aliases
+
+# push current branch to origin
+pcb = !git push-current-branch
