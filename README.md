@@ -13,34 +13,21 @@ git config --global --add include.path "$(pwd)/git-aliases/.gitaliases"
 
 ## Aliases
 
-### Standup
-
-`git standup`
+### `git standup`
 
 Show the commit messages between 12pm yesterday and 12pm today. Adapted from https://bitbucket.org/tpettersen/git-aliases
 
-**Example**
-
-```
-$ git standup
-15 hours ago - Minor code changes
-16 hours ago - Optimise the reduce function
-16 hours ago - Improve computeStats performance
-```
-
-### Skip CI (Travis)
-
-`git skipci <commit message>`
+### `git skipci <commit message>`
 
 Change the commit message to skip the Travis build. It’s equivalent to call `git commit -am '[skip ci] commit message'`.
 
-**Example**
+### `git current-branch`
 
-```
-$ git skipci 'Minor changes'
-$ git log -n 1 --oneline
-a9283a4 [skip ci] Minor changes
-```
+Shows the name of the current branch.
+
+### `git push-current-branch`
+
+Push the current branch to `origin`.
 
 ## Learn More
 
