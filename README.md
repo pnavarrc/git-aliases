@@ -15,7 +15,7 @@ git config --global --add include.path "$(pwd)/git-aliases/.gitaliases"
 
 ### `git standup`
 
-Show the commit messages between 12pm yesterday and 12pm today. Adapted from https://bitbucket.org/tpettersen/git-aliases
+Show the commit messages in the last 24 hours. Adapted from https://bitbucket.org/tpettersen/git-aliases
 
 ### `git skipci <commit message>`
 
