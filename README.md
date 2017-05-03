@@ -8,7 +8,7 @@ Personal `git` aliases
 
 ```
 git clone git@github.com:pnavarrc/git-aliases.git
-git config --global --add include.path "$(pwd)/git-aliases/.gitaliases"
+git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 ```
 
 ## Aliases
@@ -28,6 +28,10 @@ Shows the name of the current branch.
 ### `git push-current-branch`
 
 Push the current branch to `origin`.
+
+### `git amend-commit-message <commit message>`
+
+Replaces the commit message of the last commit
 
 ## Learn More
 
