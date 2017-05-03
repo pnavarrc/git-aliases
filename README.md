@@ -1,4 +1,5 @@
 # git-aliases
+_v0.2.0_
 
 Personal `git` aliases
 
@@ -8,7 +9,7 @@ Personal `git` aliases
 
 ```
 git clone git@github.com:pnavarrc/git-aliases.git
-git config --global --add include.path "$(pwd)/git-aliases/.gitaliases"
+git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 ```
 
 ## Aliases
@@ -28,6 +29,14 @@ Shows the name of the current branch.
 ### `git push-current-branch`
 
 Push the current branch to `origin`.
+
+### `git amend-commit-message <commit message>`
+
+Replaces the commit message of the last commit
+
+### `git list-merged-branches <branch>`
+
+List local branches merged to `<branch>`. Useful to delete merged branches.
 
 ## Learn More
 
