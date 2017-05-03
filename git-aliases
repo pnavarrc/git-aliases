@@ -40,5 +40,5 @@ amend-commit-message = "!f() { \
 # List local branches already merged to <branch-name>
 
 list-merged-branches = "!f() { \
-  git branch --merged $1 | grep --invert-match '\\\\*'; \
+  git branch --merged $1 | grep --invert-match '\\*'; \
 }; f"
