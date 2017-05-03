@@ -1,4 +1,5 @@
 # git-aliases
+_v0.2.0_
 
 Personal `git` aliases
 
