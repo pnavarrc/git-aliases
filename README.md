@@ -33,6 +33,10 @@ Push the current branch to `origin`.
 
 Replaces the commit message of the last commit
 
+### `git list-merged-branches <branch>`
+
+List local branches merged to `<branch>`. Useful to delete merged branches.
+
 ## Learn More
 
 [Git Aliases (docs)](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
