@@ -38,6 +38,14 @@ Replaces the commit message of the last commit
 
 List local branches merged to `<branch>`. Useful to delete merged branches.
 
+### `git quick-commit <commit-message>`
+
+Create a signed commit, adding unstaged changes.
+
+### `git qc <commit-message>`
+
+Alias for [`quick-commit`](#git-quick-commit-commit-message)
+
 ## Learn More
 
 [Git Aliases (docs)](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
