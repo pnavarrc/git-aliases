@@ -20,7 +20,7 @@ skipci = "!f() { \
 # git current-branch
 # Echoes the name of the current branch
 
-current-branch = !git name-rev --name-only HEAD
+current-branch = !git symbolic-ref --quiet --short HEAD
 
 # git push-current-branch
 # Pushes the current branch to `origin`
@@ -42,3 +42,13 @@ amend-commit-message = "!f() { \
 list-merged-branches = "!f() { \
   git branch --merged $1 | grep --invert-match '\\*'; \
 }; f"
+
+# git quick-commit <commit-message>
+# Create a signed commit, adding unstaged changes.
+quick-commit = "!f() { \
+  git commit -S -am "$1"; \
+}; f"
+
+# git qc <commit-message>
+# Alias for quick-commit
+qc = !git quick-commit
