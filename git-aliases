@@ -52,3 +52,8 @@ quick-commit = "!f() { \
 # git qc <commit-message>
 # Alias for quick-commit
 qc = !git quick-commit
+
+# git create-branch <branch-name>
+create-branch = "!f() { \
+  git checkout -b "$1"; \
+}; f"
