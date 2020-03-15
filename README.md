@@ -51,6 +51,10 @@ Alias for [`quick-commit`](#git-quick-commit-commit-message)
 
 Create a branch from the current branch.
 
+### `git unstage <file>
+
+Remove `file` from the staging area.
+
 ## Learn More
 
 [Git Aliases (docs)](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)

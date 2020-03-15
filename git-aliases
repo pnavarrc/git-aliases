@@ -57,3 +57,8 @@ qc = !git quick-commit
 create-branch = "!f() { \
   git checkout -b "$1"; \
 }; f"
+
+# git unstage <path>
+unstage = "!f() { \
+  git reset HEAD "$1"; \
+}; f"
