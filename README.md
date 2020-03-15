@@ -1,9 +1,10 @@
 # git-aliases
+
 _v0.2.1_
 
-Personal `git` aliases
+_Personal `git` aliases_
 
-<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
+**NOTE**: Most people create short aliases to save time, aliases in this repo optimize for legibility and to make certain operations more explicit.
 
 ## How to Add the Aliases
 
@@ -45,6 +46,10 @@ Create a signed commit, adding unstaged changes.
 ### `git qc <commit-message>`
 
 Alias for [`quick-commit`](#git-quick-commit-commit-message)
+
+### `git create-branch`
+
+Create a branch from the current branch.
 
 ## Learn More
 
