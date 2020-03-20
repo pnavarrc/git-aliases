@@ -1,16 +1,14 @@
 # git-aliases
 
-_v0.2.1_
-
 _Personal `git` aliases_
 
 **NOTE**: Most people create short aliases to save time, aliases in this repo optimize for legibility and to make certain operations more explicit.
 
 ## How to Add the Aliases
 
-```
-git clone git@github.com:pnavarrc/git-aliases.git
-git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
+```sh
+$ git clone git@github.com:pnavarrc/git-aliases.git
+$ git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 ```
 
 ## Aliases
@@ -51,7 +49,7 @@ Alias for [`quick-commit`](#git-quick-commit-commit-message)
 
 Create a branch from the current branch.
 
-### `git unstage <file>
+### `git unstage <file>`
 
 Remove `file` from the staging area.
 
