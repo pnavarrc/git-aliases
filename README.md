@@ -55,6 +55,10 @@ Alias for [`quick-commit`](#git-quick-commit-commit-message)
 
 Remove `file` from the staging area.
 
+#### `git undo-commit`
+
+Resets to the previous commit, leaving the working tree unchanged (`git reset --soft HEAD~1`).
+
 ### Other Commands
 
 ### `git standup`
