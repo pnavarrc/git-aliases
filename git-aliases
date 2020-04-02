@@ -1,20 +1,11 @@
 [alias]
 
-# git standup
-# List the commit messages from the last 24 hours for the current user.
-standup = !git log \
-          --author=$USER \
-          --since='yesterday' \
-          --before='today' \
-          --all \
-          --format='%cr - %s'
+# Branch Management
+# -----------------
 
-# git skipci <commit-message>
-# Create a commit and prepends `[skip ci]` to the commit message, to skip Travis from
-# running once the commit is pushed to `origin` (GitHub).
-
-skipci = "!f() { \
-  git commit -am \"[skip ci] $1\"; \
+# git create-branch <branch-name>
+create-branch = "!f() { \
+  git checkout -b "$1"; \
 }; f"
 
 # git current-branch
@@ -29,19 +20,15 @@ push-current-branch = "!f() { \
   git push -u origin $(git current-branch); \
 }; f"
 
-# git amend-commit-message <commit-message>
-# Amend the commit message of the previous commit
-
-amend-commit-message = "!f() { \
-  git commit --amend -m \"$1\"; \
-}; f"
-
 # git list-merged-branches <branch-name>
 # List local branches already merged to <branch-name>
 
 list-merged-branches = "!f() { \
   git branch --merged $1 | grep --invert-match '\\*'; \
 }; f"
+
+# Commits
+# -------
 
 # git quick-commit <commit-message>
 # Create a signed commit, adding unstaged changes.
@@ -53,12 +40,34 @@ quick-commit = "!f() { \
 # Alias for quick-commit
 qc = !git quick-commit
 
-# git create-branch <branch-name>
-create-branch = "!f() { \
-  git checkout -b "$1"; \
+# git amend-commit-message <commit-message>
+# Amend the commit message of the previous commit
+
+amend-commit-message = "!f() { \
+  git commit --amend -m \"$1\"; \
+}; f"
+
+# git skipci <commit-message>
+# Create a commit and prepends `[skip ci]` to the commit message, to skip Travis from
+# running once the commit is pushed to `origin` (GitHub).
+
+skipci = "!f() { \
+  git commit -am \"[skip ci] $1\"; \
 }; f"
 
 # git unstage <path>
 unstage = "!f() { \
   git reset HEAD "$1"; \
 }; f"
+
+# Other Aliases
+# -------------
+
+# git standup
+# List the commit messages from the last 24 hours for the current user.
+standup = !git log \
+          --author=$USER \
+          --since='yesterday' \
+          --before='today' \
+          --all \
+          --format='%cr - %s'
