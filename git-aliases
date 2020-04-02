@@ -27,7 +27,7 @@ list-merged-branches = "!f() { \
 # git quick-commit <commit-message>
 # Create a signed commit, adding unstaged changes.
 quick-commit = "!f() { \
-  git commit -S -am "$1"; \
+  git commit --gpg-sign --all --message=\"$1\"; \
 }; f"
 
 # git qc <commit-message>
@@ -38,7 +38,7 @@ qc = !git quick-commit
 # Amend the commit message of the previous commit
 
 amend-commit-message = "!f() { \
-  git commit --amend -m \"$1\"; \
+  git commit --amend --message=\"$1\"; \
 }; f"
 
 # git skipci <commit-message>

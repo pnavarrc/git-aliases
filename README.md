@@ -4,24 +4,34 @@ _Personal `git` aliases_
 
 **NOTE**: Most people create short aliases to save time, aliases in this repo optimize for legibility and to make certain operations more explicit.
 
-## How to Add the Aliases
+## Installing
 
 ```sh
 $ git clone git@github.com:pnavarrc/git-aliases.git
 $ git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 ```
 
-## Aliases
+## Usage
 
-### Branch Management
+### Branches
 
-| Alias |  Description | Git Equivalent |
-|--|--|---|
-| `create-branch <branch-name>` | Creates a branch from the current branch | `git checkout -b <branch-name>` |
-| `rename-branch <new-branch-name>` | Renames the current branch | `git branch -m <new-branch-name>` |
-| `current-branch` | Displays the name of the current branch | `git symbolic-ref --quiet --short HEAD` |
-| `push-current-branch` | Push the current branch to `origin` | `git push -u <local-branch-name>` |
-| `list-merged-branches <branch-name>` | List branches merged into the branch `branch-name` | `git branch --merged $1 \| grep --invert-match '\\*'` |
+#### `git create-branch ` _`<branch name>`_
+
+Creates a branch from the current branch.
+
+#### `git rename-branch `_`<new branch name>`_
+
+Renames the current branch to _`new branch name`_
+
+#### `git current-branch`
+
+Displays the name of the current branch
+
+#### `git push-current-branch`
+
+Pushes the current branch to `origin`
+
+#### `git list-merged-branches `_`<branch name>`_
 
 ### Commits
 
