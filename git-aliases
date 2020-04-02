@@ -3,25 +3,19 @@
 # Branch Management
 # -----------------
 
-# git create-branch <branch-name>
 create-branch = "!f() { \
   git checkout -b "$1"; \
 }; f"
 
-# git current-branch
-# Echoes the name of the current branch
+rename-branch = "!f() { \
+  git branch -m "$1"; \
+}; f"
 
 current-branch = !git symbolic-ref --quiet --short HEAD
-
-# git push-current-branch
-# Pushes the current branch to `origin`
 
 push-current-branch = "!f() { \
   git push -u origin $(git current-branch); \
 }; f"
-
-# git list-merged-branches <branch-name>
-# List local branches already merged to <branch-name>
 
 list-merged-branches = "!f() { \
   git branch --merged $1 | grep --invert-match '\\*'; \

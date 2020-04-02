@@ -15,21 +15,13 @@ $ git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 
 ### Branch Management
 
-#### `git create-branch`
-
-Create a branch from the current branch.
-
-#### `git current-branch`
-
-Shows the name of the current branch.
-
-#### `git push-current-branch`
-
-Push the current branch to `origin`.
-
-#### `git list-merged-branches <branch>`
-
-List local branches merged to `<branch>`. Useful to delete merged branches.
+| Alias |  Description | Git Equivalent |
+|--|--|---|
+| `create-branch <branch-name>` | Creates a branch from the current branch | `git checkout -b <branch-name>` |
+| `rename-branch <new-branch-name>` | Renames the current branch | `git branch -m <new-branch-name>` |
+| `current-branch` | Displays the name of the current branch | `git symbolic-ref --quiet --short HEAD` |
+| `push-current-branch` | Push the current branch to `origin` | `git push -u <local-branch-name>` |
+| `list-merged-branches <branch-name>` | List branches merged into the branch `branch-name` | `git branch --merged $1 \| grep --invert-match '\\*'` |
 
 ### Commits
 
