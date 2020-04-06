@@ -59,6 +59,12 @@ Remove `file` from the staging area.
 
 Resets to the previous commit, leaving the working tree unchanged (`git reset --soft HEAD~1`).
 
+### Logs
+
+#### `git log-branch`
+
+List the commits in the current branch that are not in the `master` branch. 
+
 ### Other Commands
 
 ### `git standup`

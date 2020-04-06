@@ -46,6 +46,13 @@ undo-commit = "!f() { \
   git reset --soft HEAD~1; \
 }; f"
 
+# Logs
+# ----
+
+log-branch = "!f() { \
+  git --no-pager log --oneline master..HEAD; \
+}; f"
+
 # Other Aliases
 # -------------
 
