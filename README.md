@@ -33,6 +33,10 @@ Pushes the current branch to `origin`
 
 #### `git list-merged-branches `_`<branch name>`_
 
+#### `git pull-master`
+
+Updates the master branch with the latest changes from `origin`.
+
 ### Commits
 
 #### `git quick-commit <commit-message>`

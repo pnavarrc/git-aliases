@@ -21,6 +21,10 @@ list-merged-branches = "!f() { \
   git branch --merged $1 | grep --invert-match '\\*'; \
 }; f"
 
+pull-master = "!f() { \
+  git fetch origin master:master; \
+}; f"
+
 # Commits
 # -------
 
