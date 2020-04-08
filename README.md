@@ -27,6 +27,14 @@ Renames the current branch to _`new branch name`_
 
 Displays the name of the current branch
 
+#### `git switch-branch <branch-name>
+
+Switches to the given branch
+
+#### `git prev-branch`
+
+Switches to the previous branch
+
 #### `git push-current-branch`
 
 Pushes the current branch to `origin`

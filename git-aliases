@@ -25,6 +25,14 @@ pull-master = "!f() { \
   git fetch origin master:master; \
 }; f"
 
+switch-branch = "!f() { \
+  git checkout "$1"; \
+}; f"
+
+prev-branch = "!f() { \
+  git checkout -; \
+}; f"
+
 # Commits
 # -------
 
