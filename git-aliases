@@ -1,30 +1,28 @@
 [alias]
 
-# Branch Management
-# -----------------
+# Working with branches
+# ---------------------
 
+# Creating a branch
 create-branch = "!f() { \
   git checkout -b "$1"; \
+}; f"
+
+new-branch = !git create-branch
+
+my-new-branch = "!f() { \
+  git create-branch "$USER/$1"; \
 }; f"
 
 rename-branch = "!f() { \
   git branch -m "$1"; \
 }; f"
 
-current-branch = !git symbolic-ref --quiet --short HEAD
-
-push-current-branch = "!f() { \
-  git push -u origin $(git current-branch); \
+delete-branch = "!f() { \
+  git branch -D "$1"; \
 }; f"
 
-list-merged-branches = "!f() { \
-  git branch --merged $1 | grep --invert-match '\\*'; \
-}; f"
-
-pull-master = "!f() { \
-  git fetch origin master:master; \
-}; f"
-
+# Switching branches
 switch-branch = "!f() { \
   git checkout "$1"; \
 }; f"
@@ -33,43 +31,54 @@ prev-branch = "!f() { \
   git checkout -; \
 }; f"
 
-# Commits
-# -------
 
-quick-commit = "!f() { \
-  git commit --gpg-sign --all --message=\"$1\"; \
+# Show the name of the current branch
+current-branch = !git symbolic-ref --quiet --short HEAD
+
+
+# Syncing changes
+
+push-current-branch = "!f() { \
+  git push -u origin $(git current-branch); \
 }; f"
 
-qc = !git quick-commit
+update-main = "!f() { \
+  git fetch origin main:main; \
+}; f"
+
+update-develop = "!f() { \
+  git fetch origin develop:develop; \
+}; f"
+
+
+# Making (and undoing) changes
+# ----------------------------
 
 amend-commit-message = "!f() { \
   git commit --amend --message=\"$1\"; \
 }; f"
 
-skipci = "!f() { \
-  git commit -am \"[skip ci] $1\"; \
-}; f"
+rewrite-commit-message = !git amend-commit-message
 
+
+# Un-add a file
 unstage = "!f() { \
   git reset HEAD "$1"; \
 }; f"
 
+undo-add = !git unstage
+
+# Undo a commit
 undo-commit = "!f() { \
   git reset --soft HEAD~1; \
-}; f"
-
-# Logs
-# ----
-
-log-branch = "!f() { \
-  git --no-pager log --oneline master..HEAD; \
 }; f"
 
 # Other Aliases
 # -------------
 
 # git standup
-# List the commit messages from the last 24 hours for the current user.
+# List the commit messages from the last 24 hours for the current user. Adapted 
+# from https://bitbucket.org/tpettersen/git-aliases/src/master/
 standup = !git log \
           --author=$USER \
           --since='yesterday' \

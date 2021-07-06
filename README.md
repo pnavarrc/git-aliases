@@ -1,83 +1,123 @@
 # git-aliases
 
-_Personal `git` aliases_
+> Git commands for humans.
 
-**NOTE**: Most people create short aliases to save time, aliases in this repo optimize for legibility and to make certain operations more explicit.
+This is a collection of [Git aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) designed to be easy to remember and to prevent mistakes.
 
-## Installing
+## Getting started
+
+If you like the aliases in this repo you can just install them locally and use them:
 
 ```sh
 $ git clone git@github.com:pnavarrc/git-aliases.git
 $ git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 ```
 
-## Usage
+If you prefer to customize them, you can fork the repo and add your own aliases, or you can [create an issue](https://github.com/pnavarrc/git-aliases/issues) or [submit a pull request](https://github.com/pnavarrc/git-aliases/pulls) if you think that the command could be useful for others.
 
-### Branches
+## Aliases
 
-#### `git create-branch ` _`<branch name>`_
+### Working with branches
+
+#### Creating a branch
 
 Creates a branch from the current branch.
 
-#### `git rename-branch `_`<new branch name>`_
+```sh
+$ git create-branch <branch-name> # or alternatively
+$ git new-branch <branch-name>
+```
 
-Renames the current branch to _`new branch name`_
+If you want to prefix the branch name with your local username:
 
-#### `git current-branch`
+```sh
+$ git my-new-branch branch-name
+```
 
-Displays the name of the current branch
+This will create a new branch named `username/branch-name`. It relies on the environment variable `$USER`.
 
-#### `git switch-branch <branch-name>
+#### Renaming a branch
 
-Switches to the given branch
+Renames the current branch to `new name`.
 
-#### `git prev-branch`
+```sh
+$ git rename-branch <new-name>
+```
 
-Switches to the previous branch
+#### Deleting a branch
 
-#### `git push-current-branch`
+Deletes the branch `branch-name`. Note that it won't delete the current branch, you need to switch branched before deleting the branch.
 
-Pushes the current branch to `origin`
+```sh
+git delete-branch <branch-name>
+```
 
-#### `git list-merged-branches `_`<branch name>`_
+#### Switching branches
 
-#### `git pull-master`
+Switches to `branch-name`
 
-Updates the master branch with the latest changes from `origin`.
+```sh
+$ git switch-branch <branch-name>
+```
 
-### Commits
+To switch to the previous branch, run:
 
-#### `git quick-commit <commit-message>`
+```sh
+$ git prev-branch
+```
 
-Create a signed commit, adding unstaged changes.
+This is equivalent to run `git checkout -`.
 
-#### `git skipci <commit message>`
+#### Show the name of the current branch
 
-Change the commit message to skip the Travis build. It’s equivalent to call `git commit -am '[skip ci] commit message'`.
+```sh
+$ git current-branch
+```
 
-#### `git amend-commit-message <commit message>`
+### Syncing Changes
 
-Replaces the commit message of the last commit
+Pushes the current branch and latest changes to `origin`
 
-#### `git qc <commit-message>`
+```sh
+$ git push-current-branch
+```
 
-Alias for [`quick-commit`](#git-quick-commit-commit-message)
+The following commands pull changes from `origin` to the `main` and `develop` branches respectively. It doesn't push changes to avoid pushing changes to important branches by mistake (you can use `git push-current-branch` for this)
 
-#### `git unstage <file>`
+```sh
+$ git update-main
+$ git update-develop
+```
 
-Remove `file` from the staging area.
+### Making (and undoing) changes
 
-#### `git undo-commit`
+#### Rewriting the commit message
 
-Resets to the previous commit, leaving the working tree unchanged (`git reset --soft HEAD~1`).
+Replaces the commit message of the last commit with `new commit message`.
 
-### Logs
+```sh
+$ git amend-commit-message <new commit message>  # or
+$ git rewrite-commit-message <new commit message>
+```
 
-#### `git log-branch`
+#### Undo a commit
 
-List the commits in the current branch that are not in the `master` branch. 
+Resets to the previous commit, leaving the working tree unchanged.
 
-### Other Commands
+```sh
+$ git undo-commit
+```
+
+#### Un-add a file
+
+Removes a file accidentally added to Git (specifically, added to the staging area) _before_ creating a commit.
+
+```sh
+$ git undo-add <file>  # or
+$ git unstage <file>
+```
+
+### Other commands
 
 ### `git standup`
 
