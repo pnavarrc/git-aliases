@@ -31,12 +31,12 @@ prev-branch = "!f() { \
   git checkout -; \
 }; f"
 
-
 # Show the name of the current branch
 current-branch = !git symbolic-ref --quiet --short HEAD
 
 
 # Syncing changes
+# ---------------
 
 push-current-branch = "!f() { \
   git push -u origin $(git current-branch); \
@@ -60,7 +60,6 @@ amend-commit-message = "!f() { \
 
 rewrite-commit-message = !git amend-commit-message
 
-
 # Un-add a file
 unstage = "!f() { \
   git reset HEAD "$1"; \
@@ -72,6 +71,19 @@ undo-add = !git unstage
 undo-commit = "!f() { \
   git reset --soft HEAD~1; \
 }; f"
+
+# Working with tags
+# -----------------
+
+list-tags = "!f() { \
+  git --no-pager tag; \
+}; f"
+
+create-tag = "!f() { \
+  git tag -a "$1"; \
+}; f"
+
+new-tag = !git create-tag
 
 # Other Aliases
 # -------------
@@ -85,3 +97,4 @@ standup = !git log \
           --before='today' \
           --all \
           --format='%cr - %s'
+

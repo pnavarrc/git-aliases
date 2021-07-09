@@ -17,21 +17,21 @@ If you prefer to customize them, you can fork the repo and add your own aliases,
 
 ## Aliases
 
-### Working with branches
+### 🌱 Working with branches
 
 #### Creating a branch
 
 Creates a branch from the current branch.
 
 ```sh
-$ git create-branch <branch-name> # or alternatively
-$ git new-branch <branch-name>
+git create-branch <branch-name> # or alternatively
+git new-branch <branch-name>
 ```
 
 If you want to prefix the branch name with your local username:
 
 ```sh
-$ git my-new-branch branch-name
+git my-new-branch branch-name
 ```
 
 This will create a new branch named `username/branch-name`. It relies on the environment variable `$USER`.
@@ -41,7 +41,7 @@ This will create a new branch named `username/branch-name`. It relies on the env
 Renames the current branch to `new name`.
 
 ```sh
-$ git rename-branch <new-name>
+git rename-branch <new-name>
 ```
 
 #### Deleting a branch
@@ -57,13 +57,13 @@ git delete-branch <branch-name>
 Switches to `branch-name`
 
 ```sh
-$ git switch-branch <branch-name>
+git switch-branch <branch-name>
 ```
 
 To switch to the previous branch, run:
 
 ```sh
-$ git prev-branch
+git prev-branch
 ```
 
 This is equivalent to run `git checkout -`.
@@ -71,33 +71,50 @@ This is equivalent to run `git checkout -`.
 #### Show the name of the current branch
 
 ```sh
-$ git current-branch
+git current-branch
 ```
 
-### Syncing Changes
+### 🔄 Syncing Changes
 
 Pushes the current branch and latest changes to `origin`
 
 ```sh
-$ git push-current-branch
+git push-current-branch
 ```
 
 The following commands pull changes from `origin` to the `main` and `develop` branches respectively. It doesn't push changes to avoid pushing changes to important branches by mistake (you can use `git push-current-branch` for this)
 
 ```sh
-$ git update-main
-$ git update-develop
+git update-main
+git update-develop
 ```
 
-### Making (and undoing) changes
+### 🏷 Working with tags
+
+#### Listing all tags
+
+```sh
+git list-tags
+```
+
+#### Create a new tag
+
+Create a new tag and open the editor to write the tag message and notes.
+
+```sh
+git create-tag v1.2.3
+git new-tag v1.2.3
+```
+
+### 📝 Making (and undoing) changes
 
 #### Rewriting the commit message
 
 Replaces the commit message of the last commit with `new commit message`.
 
 ```sh
-$ git amend-commit-message <new commit message>  # or
-$ git rewrite-commit-message <new commit message>
+git amend-commit-message <new commit message>  # or
+git rewrite-commit-message <new commit message>
 ```
 
 #### Undo a commit
@@ -105,7 +122,7 @@ $ git rewrite-commit-message <new commit message>
 Resets to the previous commit, leaving the working tree unchanged.
 
 ```sh
-$ git undo-commit
+git undo-commit
 ```
 
 #### Un-add a file
@@ -113,17 +130,21 @@ $ git undo-commit
 Removes a file accidentally added to Git (specifically, added to the staging area) _before_ creating a commit.
 
 ```sh
-$ git undo-add <file>  # or
-$ git unstage <file>
+git undo-add <file>  # or
+git unstage <file>
 ```
 
 ### Other commands
 
-### `git standup`
+### What did I do yesterday?
 
 Show the commit messages in the last 24 hours. Adapted from https://bitbucket.org/tpettersen/git-aliases
 
-## Learn More
+```sh
+git standup
+```
+
+## 📚 Learn More
 
 - [Git Aliases (docs)](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
 - [Tim Pettersen Aliases](https://bitbucket.org/tpettersen/git-aliases)
