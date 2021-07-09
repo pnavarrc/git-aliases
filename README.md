@@ -106,6 +106,12 @@ git create-tag v1.2.3
 git new-tag v1.2.3
 ```
 
+#### Push tags to origin
+
+```sh
+git push-tags
+```
+
 ### 📝 Making (and undoing) changes
 
 #### Rewriting the commit message

@@ -85,6 +85,10 @@ create-tag = "!f() { \
 
 new-tag = !git create-tag
 
+push-tags = "!f() { \
+  git push --tags; \
+}; f"
+
 # Other Aliases
 # -------------
 
