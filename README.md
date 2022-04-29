@@ -2,7 +2,7 @@
 
 > Git commands for humans.
 
-This is a collection of [Git aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) designed to be easy to remember and to prevent mistakes.
+This is a small collection of [Git aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) designed to be descriptive and easy to remember.
 
 ## Getting started
 
@@ -139,6 +139,17 @@ Removes a file accidentally added to Git (specifically, added to the staging are
 git undo-add <file>  # or
 git unstage <file>
 ```
+
+#### Create an empty commit
+
+An emtpy commit can help re-trigger a CI automation without making any changes to the code.
+
+```sh
+git create-empty-commit <commit message>  # or
+git empty-commit <commit message>
+```
+
+This is equivalent of `git commit --allow-empty -m <commit message>`.
 
 ### Other commands
 
