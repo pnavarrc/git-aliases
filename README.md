@@ -1,8 +1,33 @@
-# git-aliases
+# `git-aliases`
 
-> Git commands for humans.
+> Git aliases for humans
 
 This is a small collection of [Git aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases) designed to be descriptive and easy to remember.
+
+## Table of contents
+
+- [Getting started](#getting-started)
+- [Aliases](#aliases)
+  - [🌱 Working with branches](#-working-with-branches)
+    - [Creating a branch](#creating-a-branch)
+    - [Renaming a branch](#renaming-a-branch)
+    - [Deleting a branch](#deleting-a-branch)
+    - [Switching branches](#switching-branches)
+    - [Show the name of the current branch](#show-the-name-of-the-current-branch)
+  - [🔄 Syncing changes](#-syncing-changes)
+    - [Push the current branch](#push-the-current-branch)
+  - [🏷 Working with tags](#-working-with-tags)
+    - [Listing all tags](#listing-all-tags)
+    - [Create a new tag](#create-a-new-tag)
+    - [Push tags to origin](#push-tags-to-origin)
+  - [📝 Making (and fixing)changes](#-making-and-undoing-changes)
+    - [Rewriting the commit message](#rewriting-the-commit-message)
+    - [Undo a commit](#undo-a-commit)
+    - [Un-add a file](#un-add-a-file)
+    - [Create an empty commit](#create-an-empty-commit)
+  - [Other commands](#other-commands)
+  - [What did I do yesterday?](#what-did-i-do-yesterday)
+- [📚 Learn more](#-learn-more)
 
 ## Getting started
 
@@ -28,7 +53,7 @@ git create-branch <branch-name> # or alternatively
 git new-branch <branch-name>
 ```
 
-If you want to prefix the branch name with your local username:
+This is equivalent to `git branch -b <branch-name>`. If you want to prefix the branch name with your local username:
 
 ```sh
 git my-new-branch branch-name
@@ -75,6 +100,8 @@ git current-branch
 ```
 
 ### 🔄 Syncing Changes
+
+#### Push the current branch
 
 Pushes the current branch and latest changes to `origin`
 
@@ -131,7 +158,7 @@ Resets to the previous commit, leaving the working tree unchanged.
 git undo-commit
 ```
 
-#### Un-add a file
+#### Undo adding a file
 
 Removes a file accidentally added to Git (specifically, added to the staging area) _before_ creating a commit.
 
@@ -161,7 +188,7 @@ Show the commit messages in the last 24 hours. Adapted from https://bitbucket.or
 git standup
 ```
 
-## 📚 Learn More
+## 📚 Learn more
 
 - [Git Aliases (docs)](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
 - [Tim Pettersen Aliases](https://bitbucket.org/tpettersen/git-aliases)
