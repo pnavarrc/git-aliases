@@ -51,8 +51,8 @@ update-develop = "!f() { \
 }; f"
 
 
-# Making (and undoing) changes
-# ----------------------------
+# Making changes
+# --------------
 
 amend-commit-message = "!f() { \
   git commit --amend --message=\"$1\"; \
@@ -71,6 +71,13 @@ undo-add = !git unstage
 undo-commit = "!f() { \
   git reset --soft HEAD~1; \
 }; f"
+
+# Create an empty commit
+empty-commit = "!f() { \
+  git commit --allow-empty -m "$1" \
+}; f"
+
+create-empty-commit = !git empty-commit
 
 # Working with tags
 # -----------------
