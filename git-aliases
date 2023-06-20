@@ -96,6 +96,24 @@ push-tags = "!f() { \
   git push --tags; \
 }; f"
 
+# Working with Remotes
+# --------------------
+
+# List remotes
+list-remotes = "!f() { \
+  git remote -v; \
+}; f"
+
+# Add a remote
+add-remote = "!f() { \
+  git remote add "$1" "$2"; \
+}; f"
+
+# Remove a remote
+remove-remote = "!f() { \
+  git remote remove "$1"; \
+}; f"
+
 # Other Aliases
 # -------------
 

@@ -23,8 +23,12 @@ This is a small collection of [Git aliases](https://git-scm.com/book/en/v2/Git-B
   - [📝 Making (and fixing)changes](#-making-and-undoing-changes)
     - [Rewriting the commit message](#rewriting-the-commit-message)
     - [Undo a commit](#undo-a-commit)
-    - [Un-add a file](#un-add-a-file)
+    - [Un-add a file](#undo-adding-a-file)
     - [Create an empty commit](#create-an-empty-commit)
+  - [Working with remotes](#working-with-remotes)
+    - [Listing your remotes](#listing-your-remotes)
+    - [Adding a remote](#adding-a-remote)
+    - [Removing a remote](#removing-a-remote)
   - [Other commands](#other-commands)
   - [What did I do yesterday?](#what-did-i-do-yesterday)
 - [📚 Learn more](#-learn-more)
@@ -34,8 +38,8 @@ This is a small collection of [Git aliases](https://git-scm.com/book/en/v2/Git-B
 If you like the aliases in this repo you can just install them locally and use them:
 
 ```sh
-$ git clone git@github.com:pnavarrc/git-aliases.git
-$ git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
+git clone git@github.com:pnavarrc/git-aliases.git
+git config --global --add include.path "$(pwd)/git-aliases/git-aliases"
 ```
 
 If you prefer to customize them, you can fork the repo and add your own aliases, or you can [create an issue](https://github.com/pnavarrc/git-aliases/issues) or [submit a pull request](https://github.com/pnavarrc/git-aliases/pulls) if you think that the command could be useful for others.
@@ -177,6 +181,26 @@ git empty-commit <commit message>
 ```
 
 This is equivalent of `git commit --allow-empty -m <commit message>`.
+
+### Working with remotes
+
+#### Listing your remotes
+
+```sh
+git list-remotes
+```
+
+#### Adding a remote
+
+```sh
+git add-remote <name> <url>
+```
+
+#### Removing a remote
+
+```sh
+git remove-remote <name>
+```
 
 ### Other commands
 
