@@ -79,6 +79,9 @@ empty-commit = "!f() { \
 
 create-empty-commit = !git empty-commit
 
+# Work in progress commit
+wip = git commit -S -am 'chore: wip'
+
 # Working with tags
 # -----------------
 
